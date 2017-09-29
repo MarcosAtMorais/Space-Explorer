@@ -15,6 +15,7 @@ struct PhysicsCategory {
     static let shipCategory: UInt32 = 0b1 << 1
     static let meteorCategory: UInt32 = 0b1 << 2
     static let planetCategory: UInt32 = 0b1 << 3
+    static let bulletCategory: UInt32 = 0b1 << 4
 }
 
 class GameObject: SKShapeNode {

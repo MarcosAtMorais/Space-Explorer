@@ -15,6 +15,7 @@ class GameScene: SKScene {
     var backgroundLayer: BackgroundLayer!
     var foregroundLayer: ForegroundLayer!
     var hudLayer: HudLayer!
+    var cameraNode = SKCameraNode()
     
     override func didMove(to view: SKView) {
         self.setupScenePhysics()
@@ -22,6 +23,8 @@ class GameScene: SKScene {
     
     override init(size: CGSize) {
         super.init(size: size)
+        self.camera = cameraNode
+        self.addChild(self.camera!)
         self.setupLayers(size: size)
     }
     
@@ -49,6 +52,7 @@ class GameScene: SKScene {
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
         self.gameLayer.delegate?.update(timeInterval: currentTime)
+        self.camera?.position = self.gameLayer.ship.position
     }
     
     // MARK: Setup Methods
@@ -73,8 +77,8 @@ class GameScene: SKScene {
     
     func addLayers() {
         self.addChild(backgroundLayer)
-        self.addChild(foregroundLayer)
-        self.addChild(hudLayer)
+        self.camera!.addChild(foregroundLayer)
+        self.camera!.addChild(hudLayer)
         self.addChild(gameLayer)
     }
     
