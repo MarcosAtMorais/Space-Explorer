@@ -24,17 +24,23 @@ class Planet: SKSpriteNode {
         self.fieldNode = SKFieldNode.radialGravityField()
         super.init(texture: planetTexture, color: .clear, size: planetTexture.size())
         self.position = position
-        self.physicsBody = setupPhysicsBody(size: planetTexture.size())
-        self.fieldNode?.strength = 0.005
-        self.fieldNode?.isExclusive = false
-        self.fieldNode?.categoryBitMask = PhysicsCategory.planetCategory
-        self.fieldNode?.region = SKRegion(radius: Float(size.width*3))
-        self.fieldNode?.isEnabled = true
-        self.addChild(self.fieldNode!)
+        self.setScale(4.00)
+        self.physicsBody = setupPhysicsBody(size: size)
+        self.configureGravityField()
+        self.shadowCastBitMask = 1
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func configureGravityField() {
+        self.fieldNode?.strength = 0.00080
+        self.fieldNode?.isExclusive = false
+        self.fieldNode?.categoryBitMask = PhysicsCategory.planetCategory
+        self.fieldNode?.region = SKRegion(radius: Float(size.width*2))
+        self.fieldNode?.isEnabled = true
+        self.addChild(self.fieldNode!)
     }
     
 }
@@ -50,11 +56,12 @@ extension Planet: Physicable {
     
     func setupPhysicsBody(size: CGSize) -> SKPhysicsBody {
         
-        let physicsBody = SKPhysicsBody(texture: texture!, size: size)
+        let physicsBody = SKPhysicsBody(circleOfRadius: size.width/2)
         physicsBody.categoryBitMask = PhysicsCategory.planetCategory
-        physicsBody.collisionBitMask = PhysicsCategory.bulletCategory | PhysicsCategory.meteorCategory | PhysicsCategory.shipCategory
+        physicsBody.collisionBitMask = PhysicsCategory.bulletCategory | PhysicsCategory.meteorCategory | PhysicsCategory.shipCategory | PhysicsCategory.planetCategory
         physicsBody.contactTestBitMask = PhysicsCategory.bulletCategory | PhysicsCategory.meteorCategory | PhysicsCategory.shipCategory
-        physicsBody.mass = 100000
+        physicsBody.mass = 10000000000
+        physicsBody.fieldBitMask = 0
         return physicsBody
         
     }

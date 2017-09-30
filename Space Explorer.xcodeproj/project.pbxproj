@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C61C1B451F801B7900198B4D /* StarsParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = C61C1B441F801B7900198B4D /* StarsParticle.sks */; };
 		C65866B21F7EF2860086C17E /* Ship.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65866B11F7EF2860086C17E /* Ship.swift */; };
 		C65866B41F7EF5C60086C17E /* GameScene+SKPhysics.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65866B31F7EF5C60086C17E /* GameScene+SKPhysics.swift */; };
 		C65866B61F7F02480086C17E /* AnalogJoystick.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65866B51F7F02480086C17E /* AnalogJoystick.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C61C1B441F801B7900198B4D /* StarsParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StarsParticle.sks; sourceTree = "<group>"; };
 		C65866B11F7EF2860086C17E /* Ship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ship.swift; sourceTree = "<group>"; };
 		C65866B31F7EF5C60086C17E /* GameScene+SKPhysics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+SKPhysics.swift"; sourceTree = "<group>"; };
 		C65866B51F7F02480086C17E /* AnalogJoystick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalogJoystick.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 			children = (
 				C65866C91F7FF7C80086C17E /* SmokeParticle.sks */,
 				C65866CA1F7FF7C80086C17E /* Assets.xcassets */,
+				C61C1B441F801B7900198B4D /* StarsParticle.sks */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				C6F04B521F7D3A2600F5B3DC /* LaunchScreen.storyboard in Resources */,
 				C65866CB1F7FF7C80086C17E /* SmokeParticle.sks in Resources */,
 				C65866CC1F7FF7C80086C17E /* Assets.xcassets in Resources */,
+				C61C1B451F801B7900198B4D /* StarsParticle.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

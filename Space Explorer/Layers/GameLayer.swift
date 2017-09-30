@@ -31,15 +31,14 @@ class GameLayer: SKNode {
     func createShip(size: CGSize) {
         self.ship = Ship(position: CGPoint(x: size.width/2, y: size.height/2), size: CGSize(width: 5, height: 5))
         self.addChild(self.ship)
+        self.ship.createSmokeEffect()
     }
     
     func planetGenerator() {
         let createPlanet = SKAction.run {
             self.createPlanet()
         }
-        let wait = SKAction.wait(forDuration: 1)
-        let sequence = SKAction.sequence([createPlanet, wait])
-        let repeatForever = SKAction.repeatForever(sequence)
+        let repeatForever = SKAction.repeat(createPlanet, count: 100)
         self.run(repeatForever)
     }
     
@@ -59,8 +58,10 @@ class GameLayer: SKNode {
             planetTexture = SKTexture(image: #imageLiteral(resourceName: "Planeta4"))
         }
         planetTexture.filteringMode = .nearest
-        let planet = Planet(position: CGPoint(x: self.ship.position.x+CGFloat.random(min: -200, max: 200), y: self.ship.position.y+CGFloat.random(min: -200, max: 200)), planetTexture: planetTexture)
+        let planet = Planet(position: CGPoint(x: self.ship.position.x+CGFloat.random(min: -5000, max: 5000), y: self.ship.position.y+CGFloat.random(min: -5000, max: 5000)), planetTexture: planetTexture)
         self.addChild(planet)
     }
+    
+    // MARK: - METEORS!
     
 }

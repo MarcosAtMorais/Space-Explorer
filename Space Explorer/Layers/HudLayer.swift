@@ -19,6 +19,7 @@ class HudLayer: SKNode {
         super.init()
         self.joystick.position = CGPoint(x: -size.width*0.20, y: -size.height*0.20)
         self.joystick.substrate.color = .white
+        self.joystick.alpha = 0.25
         self.joystick.stick.color = .gray
         self.zPosition = 10
         

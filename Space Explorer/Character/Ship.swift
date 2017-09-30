@@ -21,6 +21,7 @@ class Ship : GameObject {
         self.physicsBody = self.setupPhysicsBody(size: size)
         self.fillColor = .white
         self.position = position
+        self.createSpaceshipLight()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -47,6 +48,29 @@ class Ship : GameObject {
         return sequence
     }
     
+    // Smoke Effect
+    
+    func createSmokeEffect() {
+        
+        let emitter = SKEmitterNode(fileNamed: "SmokeParticle")
+        emitter?.resetSimulation()
+        emitter?.targetNode = self.parent!
+        self.addChild(emitter!)
+        
+    }
+    
+    // Light Node
+    
+    func createSpaceshipLight() {
+        
+        let lightNode = SKLightNode()
+        lightNode.shadowColor = .black
+        lightNode.ambientColor = .lightGray
+        lightNode.alpha = 0.5
+        self.addChild(lightNode)
+        
+    }
+    
 }
 
 extension Ship : Physicable {
@@ -65,7 +89,7 @@ extension Ship: Shootable {
         let createBullet = SKAction.run {
             self.createBullet()
         }
-        let wait = SKAction.wait(forDuration: 1)
+        let wait = SKAction.wait(forDuration: 10)
         let sequence = SKAction.sequence([createBullet, wait])
         let repeatForever = SKAction.repeatForever(sequence)
         self.run(repeatForever, withKey: "shootingAction")

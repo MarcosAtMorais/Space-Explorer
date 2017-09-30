@@ -81,10 +81,12 @@ class GameScene: SKScene {
     }
     
     func addLayers() {
+        self.addChild(gameLayer)
         self.addChild(backgroundLayer)
         self.camera!.addChild(foregroundLayer)
         self.camera!.addChild(hudLayer)
-        self.addChild(gameLayer)
+        
+        self.backgroundLayer.createStarsEffect()
     }
     
 }

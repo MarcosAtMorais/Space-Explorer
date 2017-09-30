@@ -34,6 +34,9 @@ extension HudLayer {
             if location.x > 0 {
                 shootableDelegate?.stopShooting()
             }
+            else{
+                self.joystick.touchesMoved(touches, with: event)
+            }
         }
     }
     

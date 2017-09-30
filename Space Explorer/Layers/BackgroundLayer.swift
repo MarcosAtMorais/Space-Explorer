@@ -12,11 +12,19 @@ class BackgroundLayer: SKNode {
     
     init(size: CGSize) {
         super.init()
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func createStarsEffect() {
+        
+        let stars = SKEmitterNode(fileNamed: "StarsParticle")
+        stars?.resetSimulation()
+        stars?.targetNode = self
+        (self.scene as! GameScene).gameLayer.ship.addChild(stars!)
+        
     }
 
 }
