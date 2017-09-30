@@ -11,6 +11,9 @@
 		C65866B41F7EF5C60086C17E /* GameScene+SKPhysics.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65866B31F7EF5C60086C17E /* GameScene+SKPhysics.swift */; };
 		C65866B61F7F02480086C17E /* AnalogJoystick.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65866B51F7F02480086C17E /* AnalogJoystick.swift */; };
 		C65866B81F7F04130086C17E /* AnalogStickDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65866B71F7F04130086C17E /* AnalogStickDelegate.swift */; };
+		C65866BC1F7FDA350086C17E /* Bullet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65866BB1F7FDA350086C17E /* Bullet.swift */; };
+		C65866BE1F7FECD30086C17E /* Shootable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65866BD1F7FECD30086C17E /* Shootable.swift */; };
+		C65866C01F7FEEC20086C17E /* HudLayer+TouchEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65866BF1F7FEEC20086C17E /* HudLayer+TouchEvents.swift */; };
 		C685C4B11F7EBDB80085F406 /* GameLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69477A11F7EBB4A00859B11 /* GameLayer.swift */; };
 		C685C4B21F7EBDBB0085F406 /* ForegroundLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C694779F1F7EBB4900859B11 /* ForegroundLayer.swift */; };
 		C685C4B31F7EBDBE0085F406 /* BackgroundLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C694779E1F7EBB4900859B11 /* BackgroundLayer.swift */; };
@@ -34,6 +37,9 @@
 		C65866B31F7EF5C60086C17E /* GameScene+SKPhysics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+SKPhysics.swift"; sourceTree = "<group>"; };
 		C65866B51F7F02480086C17E /* AnalogJoystick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalogJoystick.swift; sourceTree = "<group>"; };
 		C65866B71F7F04130086C17E /* AnalogStickDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalogStickDelegate.swift; sourceTree = "<group>"; };
+		C65866BB1F7FDA350086C17E /* Bullet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bullet.swift; sourceTree = "<group>"; };
+		C65866BD1F7FECD30086C17E /* Shootable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shootable.swift; sourceTree = "<group>"; };
+		C65866BF1F7FEEC20086C17E /* HudLayer+TouchEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HudLayer+TouchEvents.swift"; sourceTree = "<group>"; };
 		C685C4B91F7EBFCC0085F406 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 		C694779B1F7EB9C300859B11 /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
 		C694779C1F7EB9E500859B11 /* Physicable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Physicable.swift; sourceTree = "<group>"; };
@@ -72,6 +78,8 @@
 				C694779D1F7EB9E500859B11 /* GameObject.swift */,
 				C694779C1F7EB9E500859B11 /* Physicable.swift */,
 				C65866B11F7EF2860086C17E /* Ship.swift */,
+				C65866BB1F7FDA350086C17E /* Bullet.swift */,
+				C65866BD1F7FECD30086C17E /* Shootable.swift */,
 			);
 			path = Character;
 			sourceTree = "<group>";
@@ -86,6 +94,7 @@
 				C69477A31F7EBB5700859B11 /* GameLayer+TouchesEvents.swift */,
 				C69477A21F7EBB5700859B11 /* GameLayer+Update.swift */,
 				C69477A01F7EBB4900859B11 /* HudLayer.swift */,
+				C65866BF1F7FEEC20086C17E /* HudLayer+TouchEvents.swift */,
 				C69477A41F7EBCA700859B11 /* Updatable.swift */,
 				C65866B71F7F04130086C17E /* AnalogStickDelegate.swift */,
 			);
@@ -249,13 +258,16 @@
 				C685C4B21F7EBDBB0085F406 /* ForegroundLayer.swift in Sources */,
 				C6F04B481F7D3A2600F5B3DC /* GameScene.swift in Sources */,
 				C6F04B4A1F7D3A2600F5B3DC /* GameViewController.swift in Sources */,
+				C65866BE1F7FECD30086C17E /* Shootable.swift in Sources */,
 				C685C4B51F7EBDC40085F406 /* GameLayer+Update.swift in Sources */,
 				C685C4B61F7EBDC60085F406 /* HudLayer.swift in Sources */,
 				C65866B81F7F04130086C17E /* AnalogStickDelegate.swift in Sources */,
+				C65866C01F7FEEC20086C17E /* HudLayer+TouchEvents.swift in Sources */,
 				C685C4B31F7EBDBE0085F406 /* BackgroundLayer.swift in Sources */,
 				C65866B41F7EF5C60086C17E /* GameScene+SKPhysics.swift in Sources */,
 				C6F04B421F7D3A2600F5B3DC /* AppDelegate.swift in Sources */,
 				C685C4B81F7EBDCD0085F406 /* Physicable.swift in Sources */,
+				C65866BC1F7FDA350086C17E /* Bullet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

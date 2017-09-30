@@ -10,6 +10,8 @@ import SpriteKit
 
 class HudLayer: SKNode {
     
+    var shootableDelegate: Shootable?
+    
     let joystick = 🕹(diameter: 100, colors: (UIColor.white, UIColor.lightGray))
     var delegate: AnalogStickDelegate?
     
@@ -25,22 +27,6 @@ class HudLayer: SKNode {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for touch in touches {
-            let location = touch.location(in: self)
-            self.joystick.position = location
-        }
-    }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for touch in touches {
-            let location = touch.location(in: self)
-            if location.x < (self.scene?.size.width)!/2 {
-//                self.joystick.isHidden = true
-            }
-        }
     }
     
 }

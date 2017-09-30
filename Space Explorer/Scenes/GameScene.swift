@@ -34,18 +34,22 @@ class GameScene: SKScene {
     
     // MARK: - Touches Delegate Methods
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.gameLayer.touchesBegan(touches, with: event)
         self.hudLayer.touchesBegan(touches, with: event)
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.gameLayer.touchesMoved(touches, with: event)
         self.hudLayer.touchesMoved(touches, with: event)
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.gameLayer.touchesEnded(touches, with: event)
         self.hudLayer.touchesEnded(touches, with: event)
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.gameLayer.touchesCancelled(touches, with: event)
     }
     
     // MARK: - Update Method
@@ -71,6 +75,7 @@ class GameScene: SKScene {
         self.foregroundLayer = ForegroundLayer(size: size)
         self.hudLayer = HudLayer(size: size)
         self.hudLayer.joystick.trackingHandler = self.gameLayer.ship.handlerTracking
+        self.hudLayer.shootableDelegate = self.gameLayer.ship
         
         addLayers()
     }

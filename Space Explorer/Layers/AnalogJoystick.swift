@@ -128,7 +128,7 @@ open class AnalogJoystick: SKNode {
     var stopHandler: (() -> Void)?
     var substrate: AnalogJoystickSubstrate!
     var stick: AnalogJoystickStick!
-    private var tracking = false
+    var tracking = false
     private(set) var data = AnalogJoystickData()
     
     var disabled: Bool {

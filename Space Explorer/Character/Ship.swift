@@ -10,6 +10,8 @@ import SpriteKit
 
 class Ship : GameObject {
     
+    var shipCurrentVelocity: CGVector?
+    
     override init() {
         super.init()
     }
@@ -25,6 +27,26 @@ class Ship : GameObject {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: Bulletstorm!
+    
+    func createBullet() {
+        let bullet = Bullet(position: self.position, color: .darkGray, velocity: shipCurrentVelocity!)
+        self.parent?.addChild(bullet)
+        bullet.run(removeBullet())
+        bullet.applyImpulseAccordingToVelocity(velocity: CGVector(dx: (shipCurrentVelocity?.dx)!*10, dy: (shipCurrentVelocity?.dy)!*10))
+
+        // Criar balas continuamente
+        
+    }
+    
+    func removeBullet() -> SKAction{
+        let wait = SKAction.wait(forDuration: 5)
+        let remove = SKAction.removeFromParent()
+        let sequence = SKAction.sequence([wait, remove])
+        
+        return sequence
+    }
+    
 }
 
 extension Ship : Physicable {
@@ -38,6 +60,23 @@ extension Ship : Physicable {
     
 }
 
+extension Ship: Shootable {
+    func startShooting() {
+        let createBullet = SKAction.run {
+            self.createBullet()
+        }
+        let wait = SKAction.wait(forDuration: 1)
+        let sequence = SKAction.sequence([createBullet, wait])
+        let repeatForever = SKAction.repeatForever(sequence)
+        self.run(repeatForever, withKey: "shootingAction")
+        
+    }
+    
+    func stopShooting() {
+        self.removeAction(forKey: "shootingAction")
+    }
+}
+
 extension Ship {
 
     func handlerTracking(data: AnalogJoystickData) {
@@ -46,10 +85,9 @@ extension Ship {
         
         let xAdd = xScale * data.velocity.x
         let yAdd = yScale * data.velocity.y
-        
-        print(self.physicsBody?.velocity)
+
+        self.shipCurrentVelocity = CGVector(dx: xAdd, dy: yAdd)
         self.physicsBody?.applyForce(CGVector(dx: xAdd, dy: yAdd))
-        
     }
 
 }
