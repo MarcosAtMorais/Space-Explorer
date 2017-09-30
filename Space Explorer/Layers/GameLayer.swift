@@ -19,6 +19,7 @@ class GameLayer: SKNode {
         super.init()
         self.delegate = self
         self.createShip(size: size)
+        self.planetGenerator()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -32,8 +33,34 @@ class GameLayer: SKNode {
         self.addChild(self.ship)
     }
     
-    func addAllCharacters(characters: [GameObject]) {
-        
+    func planetGenerator() {
+        let createPlanet = SKAction.run {
+            self.createPlanet()
+        }
+        let wait = SKAction.wait(forDuration: 1)
+        let sequence = SKAction.sequence([createPlanet, wait])
+        let repeatForever = SKAction.repeatForever(sequence)
+        self.run(repeatForever)
+    }
+    
+    func createPlanet() {
+        let planetNumber = Int.random(min: 0, max: 4)
+        let planetTexture: SKTexture!
+        switch planetNumber {
+        case Planets.earth.rawValue:
+            planetTexture = SKTexture(image: #imageLiteral(resourceName: "Planeta5"))
+        case Planets.desert.rawValue:
+            planetTexture = SKTexture(image: #imageLiteral(resourceName: "Planeta3"))
+        case Planets.mars.rawValue:
+            planetTexture = SKTexture(image: #imageLiteral(resourceName: "Planeta1"))
+        case Planets.pinky.rawValue:
+            planetTexture = SKTexture(image: #imageLiteral(resourceName: "Planeta2"))
+        default:
+            planetTexture = SKTexture(image: #imageLiteral(resourceName: "Planeta4"))
+        }
+        planetTexture.filteringMode = .nearest
+        let planet = Planet(position: CGPoint(x: self.ship.position.x+CGFloat.random(min: -200, max: 200), y: self.ship.position.y+CGFloat.random(min: -200, max: 200)), planetTexture: planetTexture)
+        self.addChild(planet)
     }
     
 }

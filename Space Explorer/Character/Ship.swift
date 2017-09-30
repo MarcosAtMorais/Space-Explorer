@@ -10,7 +10,7 @@ import SpriteKit
 
 class Ship : GameObject {
     
-    var shipCurrentVelocity: CGVector?
+    var shipCurrentVelocity: CGVector! = CGVector(dx: 100, dy: 100)
     
     override init() {
         super.init()

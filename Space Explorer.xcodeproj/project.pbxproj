@@ -14,6 +14,11 @@
 		C65866BC1F7FDA350086C17E /* Bullet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65866BB1F7FDA350086C17E /* Bullet.swift */; };
 		C65866BE1F7FECD30086C17E /* Shootable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65866BD1F7FECD30086C17E /* Shootable.swift */; };
 		C65866C01F7FEEC20086C17E /* HudLayer+TouchEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65866BF1F7FEEC20086C17E /* HudLayer+TouchEvents.swift */; };
+		C65866C21F7FF2B20086C17E /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65866C11F7FF2B20086C17E /* Planet.swift */; };
+		C65866C51F7FF4F40086C17E /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C694779B1F7EB9C300859B11 /* CGFloat+Extensions.swift */; };
+		C65866C71F7FF5450086C17E /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65866C61F7FF5450086C17E /* Int+Extensions.swift */; };
+		C65866CB1F7FF7C80086C17E /* SmokeParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = C65866C91F7FF7C80086C17E /* SmokeParticle.sks */; };
+		C65866CC1F7FF7C80086C17E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C65866CA1F7FF7C80086C17E /* Assets.xcassets */; };
 		C685C4B11F7EBDB80085F406 /* GameLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69477A11F7EBB4A00859B11 /* GameLayer.swift */; };
 		C685C4B21F7EBDBB0085F406 /* ForegroundLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C694779F1F7EBB4900859B11 /* ForegroundLayer.swift */; };
 		C685C4B31F7EBDBE0085F406 /* BackgroundLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C694779E1F7EBB4900859B11 /* BackgroundLayer.swift */; };
@@ -40,6 +45,10 @@
 		C65866BB1F7FDA350086C17E /* Bullet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bullet.swift; sourceTree = "<group>"; };
 		C65866BD1F7FECD30086C17E /* Shootable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shootable.swift; sourceTree = "<group>"; };
 		C65866BF1F7FEEC20086C17E /* HudLayer+TouchEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HudLayer+TouchEvents.swift"; sourceTree = "<group>"; };
+		C65866C11F7FF2B20086C17E /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
+		C65866C61F7FF5450086C17E /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
+		C65866C91F7FF7C80086C17E /* SmokeParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SmokeParticle.sks; sourceTree = "<group>"; };
+		C65866CA1F7FF7C80086C17E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C685C4B91F7EBFCC0085F406 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 		C694779B1F7EB9C300859B11 /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
 		C694779C1F7EB9E500859B11 /* Physicable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Physicable.swift; sourceTree = "<group>"; };
@@ -72,6 +81,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C65866C81F7FF7AF0086C17E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C65866C91F7FF7C80086C17E /* SmokeParticle.sks */,
+				C65866CA1F7FF7C80086C17E /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		C69477941F7EB97300859B11 /* Character */ = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +98,7 @@
 				C65866B11F7EF2860086C17E /* Ship.swift */,
 				C65866BB1F7FDA350086C17E /* Bullet.swift */,
 				C65866BD1F7FECD30086C17E /* Shootable.swift */,
+				C65866C11F7FF2B20086C17E /* Planet.swift */,
 			);
 			path = Character;
 			sourceTree = "<group>";
@@ -122,6 +141,7 @@
 			children = (
 				C694779B1F7EB9C300859B11 /* CGFloat+Extensions.swift */,
 				C65866B31F7EF5C60086C17E /* GameScene+SKPhysics.swift */,
+				C65866C61F7FF5450086C17E /* Int+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -161,6 +181,7 @@
 		C6F04B401F7D3A2500F5B3DC /* Space Explorer */ = {
 			isa = PBXGroup;
 			children = (
+				C65866C81F7FF7AF0086C17E /* Resources */,
 				C694779A1F7EB99C00859B11 /* Persistence */,
 				C69477991F7EB99400859B11 /* Scenes */,
 				C69477981F7EB98E00859B11 /* Extensions */,
@@ -238,6 +259,8 @@
 				C6F04B4D1F7D3A2600F5B3DC /* Main.storyboard in Resources */,
 				C6F04B4F1F7D3A2600F5B3DC /* Assets.xcassets in Resources */,
 				C6F04B521F7D3A2600F5B3DC /* LaunchScreen.storyboard in Resources */,
+				C65866CB1F7FF7C80086C17E /* SmokeParticle.sks in Resources */,
+				C65866CC1F7FF7C80086C17E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C65866C51F7FF4F40086C17E /* CGFloat+Extensions.swift in Sources */,
 				C685C4B71F7EBDCA0085F406 /* GameObject.swift in Sources */,
 				C65866B61F7F02480086C17E /* AnalogJoystick.swift in Sources */,
 				C69477A51F7EBCA700859B11 /* Updatable.swift in Sources */,
@@ -262,10 +286,12 @@
 				C685C4B51F7EBDC40085F406 /* GameLayer+Update.swift in Sources */,
 				C685C4B61F7EBDC60085F406 /* HudLayer.swift in Sources */,
 				C65866B81F7F04130086C17E /* AnalogStickDelegate.swift in Sources */,
+				C65866C71F7FF5450086C17E /* Int+Extensions.swift in Sources */,
 				C65866C01F7FEEC20086C17E /* HudLayer+TouchEvents.swift in Sources */,
 				C685C4B31F7EBDBE0085F406 /* BackgroundLayer.swift in Sources */,
 				C65866B41F7EF5C60086C17E /* GameScene+SKPhysics.swift in Sources */,
 				C6F04B421F7D3A2600F5B3DC /* AppDelegate.swift in Sources */,
+				C65866C21F7FF2B20086C17E /* Planet.swift in Sources */,
 				C685C4B81F7EBDCD0085F406 /* Physicable.swift in Sources */,
 				C65866BC1F7FDA350086C17E /* Bullet.swift in Sources */,
 			);

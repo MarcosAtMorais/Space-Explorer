@@ -34,15 +34,33 @@ extension GameScene: SKPhysicsContactDelegate {
         switch contact.bodyA.node {
         case is Ship:
             (contact.bodyA.node as! Ship).didBeginContact(contact: contact)
+            
+        case is Bullet:
+            (contact.bodyA.node as! Bullet).didBeginContact(contact: contact)
+            
+        case is Planet:
+            (contact.bodyA.node as! Planet).didBeginContact(contact: contact)
+            
+//        case is Meteor:
+        //            (contact.bodyA.node as! Meteor).didBeginContact(contact: contact)
         default:
-            (contact.bodyA.node as! Ship).didBeginContact(contact: contact)
+            print("Not recognized.")
         }
         
         switch contact.bodyB.node {
         case is Ship:
             (contact.bodyB.node as! Ship).didBeginContact(contact: contact)
+            
+        case is Bullet:
+            (contact.bodyB.node as! Bullet).didBeginContact(contact: contact)
+            
+        case is Planet:
+            (contact.bodyB.node as! Planet).didBeginContact(contact: contact)
+            
+//        case is Meteor:
+//            (contact.bodyB.node as! Meteor).didBeginContact(contact: contact)
         default:
-            (contact.bodyA.node as! Ship).didBeginContact(contact: contact)
+            print("Not recognized.")
         }
         
     }
