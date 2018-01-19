@@ -12,19 +12,19 @@ This was only for educational purposes.
 
 Using basic concepts of the SpriteKit framework, this project uses components such as: 
 
-## SKView
-## SKScene
-## SKNode
-## SKSpriteNode
-## SKAudioNode
-## SKVideoNode
-## SKPhysicsBody
-## SKPhysicsWorld
-## SKFieldNode
-## SKAudioNode
-## SKEffectNode
-## SKCameraNode
-## GNNoise
+#### SKView
+#### SKScene
+#### SKNode
+#### SKSpriteNode
+#### SKAudioNode
+#### SKVideoNode
+#### SKPhysicsBody
+#### SKPhysicsWorld
+#### SKFieldNode
+#### SKAudioNode
+#### SKEffectNode
+#### SKCameraNode
+#### GNNoise
 
 
 We also have a clear example of SpriteKit's lifecycle and the use of Protocol Oriented Programming - POP.
@@ -35,15 +35,15 @@ Swift 4.0+, Xcode 9+, basic iOS application lifecycle knowledge.
 
 ### Design Patterns used
 
-## Basic Inheritance architecture-based.
-## Singleton
-## Managers
-## Object Pooling
-## Memento
-## State Machines
-## Game Objects
-## Texture Caching
-## Atlases
+#### Basic Inheritance architecture-based.
+#### Singleton
+#### Managers
+#### Object Pooling
+#### Memento
+#### State Machines
+#### Game Objects
+#### Texture Caching
+#### Atlases
 
 
 ## Deployment
